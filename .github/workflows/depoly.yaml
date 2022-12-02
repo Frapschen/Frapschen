@@ -22,7 +22,8 @@ jobs:
       - name: test-ssh
         run: |
           echo $repo_id_rsa_gitee >> id_rsa_gitee
+          echo $$repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
           ls
-          ssh-add id_rsa_gitee
+          ssh-add ./id_rsa_gitee
           ssh-add -I
           ssh -T git@gitee.com
