@@ -21,4 +21,5 @@ jobs:
           key: ${{ secrets.REPO_ID_RSA_GITEE }}
       - name: test-ssh
         run: |
+          cat ~/.ssh/config
           ssh -T git@gitee.com
