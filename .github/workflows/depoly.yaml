@@ -18,8 +18,8 @@ jobs:
         run: |
           pwd=$(pwd)
           echo $pwd
-          echo $repo_id_rsa_gitee >> id_rsa_gitee 
-          echo &repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
+          cat $repo_id_rsa_gitee > id_rsa_gitee 
+          cat &repo_id_rsa_gitee_pub > id_rsa_gitee.pub
           ls
           ssh config add
           ssh -T git@gitee.com
