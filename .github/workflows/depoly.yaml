@@ -10,5 +10,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: git-test
+        run: |
+          git pull https://gitee.com/Frapschen/webstore-demo-gitops.git
+          cd webstore-demo-gitops
+          ls -A
       - name: test
         run: ssh -h
