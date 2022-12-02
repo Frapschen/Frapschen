@@ -18,6 +18,10 @@ jobs:
         run: |
           pwd=$(pwd)
           echo $pwd
+          echo $repo_id_rsa_gitee >> id_rsa_gitee 
+          echo &repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
+          ls
+          ssh config add
           ssh -T git@gitee.com
           git clone https://gitee.com/Frapschen/webstore-demo-gitops.git
           cd webstore-demo-gitops
