@@ -18,5 +18,5 @@ jobs:
         with:
           python-version: '3.7'
       - run: |
-          pip install -r requirements.txt
+          pip install -r .github/workflows/scripts/requirements.txt
           python .github/workflows/scripts/push.py
