@@ -14,16 +14,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: git-test
-        run: |
-          pwd=$(pwd)
-          echo $pwd
-          cat $repo_id_rsa_gitee > id_rsa_gitee 
-          cat &repo_id_rsa_gitee_pub > id_rsa_gitee.pub
-          ls
-          ssh config add
-          ssh -T git@gitee.com
-          git clone https://gitee.com/Frapschen/webstore-demo-gitops.git
-          cd webstore-demo-gitops
-      - name: test
-        run: ssh -h
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: gitee.com
+          key: ${{ secrets.REPO_ID_RSA_GITEE }}
+          script: |
+            whoami
