@@ -22,6 +22,5 @@ jobs:
       - name: test-ssh
         run: |
           pwd
-          mkdir -p ~/.ssh
-          ls -al
+          ls -R |awk '{print i$0}' i=`pwd`'/'
           ssh -T git@gitee.com
