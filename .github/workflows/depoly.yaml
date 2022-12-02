@@ -21,6 +21,8 @@ jobs:
 #          key: ${{ secrets.REPO_ID_RSA_GITEE }}
       - name: test-ssh
         run: |
+          pwd
+          mkdir -p ~/.ssh
           cd ~/.ssh/
           cat ${{ secrets.REPO_ID_RSA_GITEE }} >> id_rsa_gitee
           ls -al
