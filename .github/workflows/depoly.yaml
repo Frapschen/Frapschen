@@ -19,11 +19,19 @@ jobs:
 #        with:
 #          host: gitee.com
 #          key: ${{ secrets.REPO_ID_RSA_GITEE }}
-      - name: test-ssh
+      - name : test-git
         run: |
-          echo $repo_id_rsa_gitee >> id_rsa_gitee
-          echo $$repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
-          ls
-          ssh-add ./id_rsa_gitee
-          ssh-add -I
-          ssh -T git@gitee.com
+          git config --global user.name 'openResouce'
+          git config --global user.email '1016136289@qq.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITEE_TOKEN }}gitee.com/openresouce/imgResources.git
+          git commit -am "style: Apply Black style"
+          git push
+#      - name: test-ssh
+#        run: |
+#          echo $repo_id_rsa_gitee >> id_rsa_gitee
+#          echo $$repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
+#          ls
+#          ssh-add ./id_rsa_gitee
+#          ssh-add -I
+#          ssh -T git@gitee.com
+        
