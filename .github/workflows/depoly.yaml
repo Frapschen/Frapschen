@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: git-test
         run: |
+          ls ~/.ssh
           ssh -T git@gitee.com
           git clone https://gitee.com/Frapschen/webstore-demo-gitops.git
           cd webstore-demo-gitops
