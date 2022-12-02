@@ -7,8 +7,7 @@ on:
     tags: ["v*"]
 
 env:
-  repo_id_rsa_gitee: ${{ secrets.REPO_ID_RSA_GITEE }}
-  repo_id_rsa_gitee_pub: ${{ secrets.REPO_ID_RSA_GITEE_PUB }}
+  GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
 
 jobs:
   release:
@@ -18,4 +17,6 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.7'
-      - run: python .github/workflows/scripts/push.py
+      - run: |
+          
+          python .github/workflows/scripts/push.py
