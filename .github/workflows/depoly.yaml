@@ -21,8 +21,8 @@ jobs:
 #          key: ${{ secrets.REPO_ID_RSA_GITEE }}
       - name: test-ssh
         run: |
-          pwd
           echo $repo_id_rsa_gitee >> id_rsa_gitee
-          ls -al
+          ls
           ssh-add id_rsa_gitee
+          ssh-add -I
           ssh -T git@gitee.com
