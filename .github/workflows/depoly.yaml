@@ -14,12 +14,22 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using key
-        uses: appleboy/ssh-action@master
-        with:
-          host: gitee.com
-          key: ${{ secrets.REPO_ID_RSA_GITEE }}
+#      - name: executing remote ssh commands using key
+#        uses: appleboy/ssh-action@master
+#        with:
+#          host: gitee.com
+#          key: ${{ secrets.REPO_ID_RSA_GITEE }}
       - name: test-ssh
         run: |
-          cat ~/.ssh/config
+          cd ~/.ssh/
+          cat ${{ secrets.REPO_ID_RSA_GITEE }} >> id_rsa_gitee
+          ls -al
+          cat >>config<<EOF
+          Host gitee.com
+          User Frapschen
+          HostName gitee.com
+          PreferredAuthentications publickey
+          IdentityFile ~/.ssh/id_rsa_gitee
+          EOF
+          ls -al
           ssh -T git@gitee.com
