@@ -21,3 +21,4 @@ jobs:
           key: ${{ secrets.REPO_ID_RSA_GITEE }}
           script: |
             whoami
+            ls
