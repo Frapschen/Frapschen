@@ -20,5 +20,4 @@ jobs:
           host: gitee.com
           key: ${{ secrets.REPO_ID_RSA_GITEE }}
           script: |
-            whoami
-            ls
+            ssh -T git@gitee.com
