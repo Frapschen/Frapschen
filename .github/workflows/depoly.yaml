@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: git-test
         run: |
-          git pull https://gitee.com/Frapschen/webstore-demo-gitops.git
+          git clone https://gitee.com/Frapschen/webstore-demo-gitops.git
           cd webstore-demo-gitops
           ls -A
       - name: test
