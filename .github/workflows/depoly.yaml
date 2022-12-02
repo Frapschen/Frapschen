@@ -14,10 +14,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using password
+      - name: executing remote ssh commands using key
         uses: appleboy/ssh-action@master
         with:
           host: gitee.com
           key: ${{ secrets.REPO_ID_RSA_GITEE }}
           script: |
             ssh -T git@gitee.com
+      - name: test-ssh
+        run: |
+          ssh -T git@gitee.com
