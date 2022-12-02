@@ -23,16 +23,5 @@ jobs:
         run: |
           pwd
           mkdir -p ~/.ssh
-          cd ~/.ssh/
-          pwd
-#          cat ${{ secrets.REPO_ID_RSA_GITEE }} >> id_rsa_gitee
-          ls -al
-#          cat >>config<<EOF
-#          Host gitee.com
-#          User Frapschen
-#          HostName gitee.com
-#          PreferredAuthentications publickey
-#          IdentityFile ~/.ssh/id_rsa_gitee
-#          EOF
           ls -al
           ssh -T git@gitee.com
