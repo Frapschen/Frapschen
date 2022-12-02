@@ -14,24 +14,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-#      - name: executing remote ssh commands using key
-#        uses: appleboy/ssh-action@master
-#        with:
-#          host: gitee.com
-#          key: ${{ secrets.REPO_ID_RSA_GITEE }}
-      - name : test-git
-        run: |
-          git config --global user.name 'openResouce'
-          git config --global user.email '1016136289@qq.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITEE_TOKEN }}gitee.com/openresouce/imgResources.git
-          git commit -am "style: Apply Black style"
-          git push
-#      - name: test-ssh
-#        run: |
-#          echo $repo_id_rsa_gitee >> id_rsa_gitee
-#          echo $$repo_id_rsa_gitee_pub >> id_rsa_gitee.pub
-#          ls
-#          ssh-add ./id_rsa_gitee
-#          ssh-add -I
-#          ssh -T git@gitee.com
-        
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+      - run: .github/workflows/scripts/push.py
