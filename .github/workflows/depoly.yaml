@@ -6,6 +6,10 @@ on:
       - main
     tags: ["v*"]
 
+env:
+  repo_id_rsa_gitee: ${{ secrets.REPO_ID_RSA_GITEE }}
+  repo_id_rsa_gitee_pub: ${{ secrets.REPO_ID_RSA_GITEE_PUB }}
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,5 +19,7 @@ jobs:
           git clone https://gitee.com/Frapschen/webstore-demo-gitops.git
           cd webstore-demo-gitops
           ls -A
+          echo $repo_id_rsa_gitee
+          echo $repo_id_rsa_gitee_pub
       - name: test
         run: ssh -h
