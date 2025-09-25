@@ -17,4 +17,9 @@ Here are some ideas to get you started:
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=Frapschen&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
 
 - 🌱 I’m currently working on [DaoCloud](https://www.daocloud.io/) Chengdu China
-- 🔭 I’m currently interested in observability system
+- 🔭 I’m currently interested in observability system and LLM
+
+Recent Status
+
+- Triager for [opentelemetry-collector-contrib](https://github.com/open-telemetry/opentelemetry-collector-contrib)
+- Actively maintaining the [spanmetricsconnector](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/connector/spanmetricsconnector) and [clickhouseexporter](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/clickhouseexporter), improving their stability and production readiness.
